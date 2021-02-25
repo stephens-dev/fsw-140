@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  border-style: solid;
+  width: 400px;
+  margin-left: 35%;
+  margin-top: 2%;
+  
+}
+body {
+  background-color: #7a857e;
+
+}
+.postList {
+  list-style-type: none;
+  background-color: #959d97;
+}
+li {
+  margin-top: 5px;
+  text-decoration: underline;
+  padding-right: 30px;
+}
