@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40px;
+  background-color: #3339;
+}
+
+.todo-display {
+  display: flex;
+  justify-content: space-around;
+  border: solid 2px gray;
+  margin: 10px;
+}
