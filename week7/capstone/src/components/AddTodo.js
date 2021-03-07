@@ -32,7 +32,7 @@ const {item, description, completed} = inputs
 
 return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form className="container1" onSubmit={handleSubmit}>
             <input type="text" 
             onChange={handleChange} 
             value={item} 
@@ -49,7 +49,8 @@ return (
             name="completed" 
             placeholder="completed"/>
         </form>
-        <button onClick={handleSubmit}>Submit</button>
+        <button className="button1" onClick={handleSubmit}>Submit</button>
+        {/* <button onClick={handleSubmit}>Update Todo</button> */}
     </div>
 )
 }

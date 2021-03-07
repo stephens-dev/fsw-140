@@ -38,15 +38,38 @@ export default function MainProvider(props) {
                 })
             }).catch(err => console.log(newTodo))
     }
+    // error
+    // 
+    // 
     function deleteTodo(todoId) {
-        console.log(props.display)
-        axios.delete(`/deletetodo/:${todoId}`)
+        console.log(todoId)
+        axios.delete("/deletetodo/"+ todoId)
         .then(res => {
-            setMainState(prevState => prevState.filter(todo => todo.id !== todoId))
+            setMainState(prevState => ({...prevState, 
+                display: prevState.display.filter(todo => todo.id !== todoId)}))
 
         })
         .catch(err => console.log(err))
         
+    }
+
+    function updateTodo(e,todoId ,newTodo) {
+        e.preventDefault()
+        console.log(newTodo, todoId)
+        axios.put(`/updatetodo/${todoId}`, newTodo)
+        .then(res => {
+            setMainState(prevState => ({...prevState, 
+                display: prevState.display.map(todo => {
+                    
+                  if( todo.id !== todoId) {
+                      return todo
+                  }else {
+                      console.log(newTodo)
+                      return todo
+                  }
+                })}))
+
+        }).catch(err => console.log(newTodo))
     }
 
     return ( 
@@ -55,7 +78,8 @@ export default function MainProvider(props) {
                 ...mainState,
                 getdisplay,
                 addTodo,
-                deleteTodo
+                deleteTodo,
+                updateTodo
             }
         } > {
             props.children

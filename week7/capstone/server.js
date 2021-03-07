@@ -47,11 +47,23 @@ app.post('/posttodo', (req, res) => {
     })
 })
 app.delete('/deletetodo/:todoId', (req, res) => {
-    let sql = `DELETE FROM todos WHERE id = ${req.params.id}`;
+    let sql = `DELETE FROM todos WHERE id = ${req.params.todoId}`;
 
     db.query(sql, (err, results) => {
-        console.log(result)
+        console.log(req.params.todoId)
         res.send(200)
+    })
+})
+
+app.put('/updatetodo/:id' , (req, res) => {
+    let {item, description, completed} = req.body
+    let sql = `UPDATE todos set item = '${item}',description= '${description}', completed='${completed}' WHERE id = ${req.params.id} `
+
+    db.query(sql, (err, result) => {
+        if (err) {
+            throw err
+        }
+        res.send("200")
     })
 })
 

@@ -8,8 +8,10 @@ import {MainContext} from './context/MainProvider'
 import { useContext } from 'react';
 
 function App() {
-  const {addTodo, deleteTodo} = useContext(MainContext)
-
+  const {addTodo, deleteTodo, updateTodo} = useContext(MainContext)
+// Update problem
+// delete problem
+// add todo cannot itterate
   return (
     <div className="App">
       <Navbar />
@@ -20,7 +22,8 @@ function App() {
       </Route>
 
     <Route path="/addtodo">
-    <AddTodos addTodo={addTodo} />
+    <AddTodos  addTodo={addTodo}
+    updateTodo={updateTodo} />
     </Route>
 
       </Switch>

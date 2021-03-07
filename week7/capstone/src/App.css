@@ -16,3 +16,16 @@
   border: solid 2px gray;
   margin: 10px;
 }
+
+.button1 {
+  width: 8%;
+  height: 5%;
+  
+}
+.delete-btn {
+  background-color: firebrick;
+  /* margin-left: 20%; */
+}
+.main-display {
+  background-color: darkgray;
+}
